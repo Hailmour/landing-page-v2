@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Text Size */
+  --font-scale: 1.25;
+  --p: 1rem;
+  --h5: calc(var(--p) * var(--font-scale));
+  --h4: calc(var(--h5) * var(--font-scale));
+  --h3: calc(var(--h4) * var(--font-scale));
+  --h2: calc(var(--h3) * var(--font-scale));
+  --h1: calc(var(--h2) * var(--font-scale));
+  --small: calc(var(--p) / var(--font-scale));
+
+  /* Font Properties */
+  font-family: 'Poppins';
+  font-weight: 400;
+  line-height: 1;
+
+  /* Other Variables */
+  --load-animation-time: .35s;
+  --max-width: 1500px;
+  --page-height: 0;
+  --visible-cards: 3;
+  --visible-grid-items: 4;
+  --section-margin: 10rem;
+  --footer-margin: calc(var(--section-margin) * 0.1);
+
+  scroll-behavior: smooth;
+}
+
+/* Light Mode */
+:root[data-theme='light'] {
+  --text: rgb(15, 15, 15);
+  --background: rgb(255, 255, 255);
+  --primary: rgb(21, 86, 48);
+  --secondary: rgb(216, 228, 221);
+  --accent: rgb(194, 0, 3);
+
+  --static1: rgba(0, 0, 0, 0.03);
+  --static2: rgba(0, 0, 0, 0.05);
+  --static3: rgba(0, 0, 0, 0.1);
+  --static4: rgba(0, 0, 0, 0.15);
+  --static5: rgba(0, 0, 0, 0.2);
+  --static6: rgba(0, 0, 0, 0.3);
+  --static7: rgba(225, 225, 225, 0.5);
+  --static8: rgba(255, 255, 255, 0.8);
+  --static9: rgba(0, 0, 0, 0.75);
+  --static10: rgba(255, 255, 255, 0.2);
+  --static11: rgba(0, 0, 0, 0.4);
+  --static12: rgba(0, 0, 0, 0.5);
+
+  --secondary-transparent: rgba(216, 228, 221, 0.65);
+  --primary-transparent: rgba(21, 86, 48, 0.65);
+  --hr: rgb(0, 0, 0, 0.46);
+}
+
+/* Dark Mode */
+:root[data-theme='dark'] {
+  --text: rgb(240, 240, 240);
+  --background: rgb(0, 0, 0);
+  --primary: rgb(169, 234, 196);
+  --secondary: rgb(27, 39, 32);
+  --accent: rgb(255, 61, 64);
+
+  --static1: rgba(255, 255, 255, 0.03);
+  --static2: rgba(255, 255, 255, 0.05);
+  --static3: rgba(255, 255, 255, 0.1);
+  --static4: rgba(255, 255, 255, 0.15);
+  --static5: rgba(255, 255, 255, 0.2);
+  --static6: rgba(255, 255, 255, 0.3);
+  --static7: rgba(0, 0, 0, 0.5);
+  --static8: rgba(0, 0, 0, 0.8);
+  --static9: rgba(255, 255, 255, 0.75);
+  --static10: rgba(0, 0, 0, 0.2);
+  --static11: rgba(255, 255, 255, 0.4);
+  --static12: rgba(255, 255, 255, 0.5);
+
+  --secondary-transparent: rgba(27, 39, 32, 0.65);
+  --primary-transparent: rgba(169, 234, 196, 0.65);
+  --hr: rgb(255, 255, 255, 0.46);
+}
+
+.global-transition {
+  transition: all 0.35s;
+}
+
+html {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+#body-wrapper {
+  overflow-x: hidden;
+}
+#body-size {
+  width: var(--max-width);
+  margin: 0 auto;
+}
+
+section {
+  margin: 0 0 var(--section-margin) 0;
+}
+
+/* Type Scale */
+h1 {font-size: var(--h1);}
+h2 {font-size: var(--h2);}
+h3 {font-size: var(--h3);}
+h4 {font-size: var(--h4);}
+h5 {font-size: var(--h5);}
+p {font-size: var(--p);}
+small {font-size: var(--small);}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* List Formating */
+ul {list-style: none;}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--static4); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--static4); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--static6); 
+}
+
+/* Page Layout */
+#content-wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 80px 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header{
+  margin-bottom: 12.5px;
+}
+
+/* Animations */
+/* Fade In Animation */
+.animation-hidden {
+  opacity: 0;
+  backdrop-filter: blur(2px);
+  transform: scale(.95);
+  transition: all 450ms ;
+}
+
+.animation-show {
+  opacity: 1;
+  backdrop-filter: blur(0);
+  transform: scale(1);
+}
+
+/* Background Images */
+.bg-image {
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
